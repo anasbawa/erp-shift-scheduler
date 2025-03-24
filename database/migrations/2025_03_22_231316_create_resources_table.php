@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->foreignId('shift_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('employee_id')->constrained('users')->cascadeOnDelete();
-            $table->timestamp('reserved_at');
+            $table->foreignId('employee_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->timestamp('reserved_at')->nullable();
             $table->timestamps();
         });
     }
