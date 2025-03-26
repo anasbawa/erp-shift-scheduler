@@ -9,7 +9,7 @@ Route::middleware('api')->group(function () {
 
     Route::prefix('shifts')->group(function () {
         Route::post('{shift}/request', [ShiftRequestController::class, 'createRequest']);
-        Route::post('approve/{shiftRequest}', [ShiftRequestController::class, 'approveShiftRequest']);
-        Route::post('reject/{shiftRequest}', [ShiftRequestController::class, 'rejectShiftRequest']);
+        Route::put('approve/{shiftRequest}', [ShiftRequestController::class, 'approveShiftRequest']);
+        Route::put('reject/{shiftRequest}', [ShiftRequestController::class, 'rejectShiftRequest']);
     });
 });
